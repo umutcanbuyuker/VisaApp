@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{FFD4163B-A3EE-4753-8BD0-38D98ECD200A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{B8652060-1A03-4E89-AC38-E628FD74CA4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{E769A99B-F1FF-4EF7-893F-63F1BB25C606}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisaApp.Application", "Core\VisaApp.Application\VisaApp.Application.csproj", "{932D47B1-121C-47E9-A462-EF944FA7E0CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisaApp.Domain", "VisaApp.Domain\VisaApp.Domain.csproj", "{F93000B5-0128-4245-A670-98BA8336ED75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisaApp.Infrastructure", "VisaApp.Infrastructure\VisaApp.Infrastructure.csproj", "{5838BB11-7410-4883-967A-219672FB0D02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisaApp.Persistence", "VisaApp.Persistence\VisaApp.Persistence.csproj", "{1A3F70BB-1DF8-4B30-8EE8-CD55C783F5A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisaApp.Api", "VisaApp.Api\VisaApp.Api.csproj", "{D52EF102-060D-4BE3-B5C0-02B648ED1D95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{932D47B1-121C-47E9-A462-EF944FA7E0CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{932D47B1-121C-47E9-A462-EF944FA7E0CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{932D47B1-121C-47E9-A462-EF944FA7E0CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{932D47B1-121C-47E9-A462-EF944FA7E0CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F93000B5-0128-4245-A670-98BA8336ED75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F93000B5-0128-4245-A670-98BA8336ED75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F93000B5-0128-4245-A670-98BA8336ED75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F93000B5-0128-4245-A670-98BA8336ED75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5838BB11-7410-4883-967A-219672FB0D02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5838BB11-7410-4883-967A-219672FB0D02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5838BB11-7410-4883-967A-219672FB0D02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5838BB11-7410-4883-967A-219672FB0D02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A3F70BB-1DF8-4B30-8EE8-CD55C783F5A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A3F70BB-1DF8-4B30-8EE8-CD55C783F5A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A3F70BB-1DF8-4B30-8EE8-CD55C783F5A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A3F70BB-1DF8-4B30-8EE8-CD55C783F5A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D52EF102-060D-4BE3-B5C0-02B648ED1D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D52EF102-060D-4BE3-B5C0-02B648ED1D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D52EF102-060D-4BE3-B5C0-02B648ED1D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D52EF102-060D-4BE3-B5C0-02B648ED1D95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{932D47B1-121C-47E9-A462-EF944FA7E0CA} = {FFD4163B-A3EE-4753-8BD0-38D98ECD200A}
+		{F93000B5-0128-4245-A670-98BA8336ED75} = {FFD4163B-A3EE-4753-8BD0-38D98ECD200A}
+		{5838BB11-7410-4883-967A-219672FB0D02} = {B8652060-1A03-4E89-AC38-E628FD74CA4E}
+		{1A3F70BB-1DF8-4B30-8EE8-CD55C783F5A3} = {B8652060-1A03-4E89-AC38-E628FD74CA4E}
+		{D52EF102-060D-4BE3-B5C0-02B648ED1D95} = {E769A99B-F1FF-4EF7-893F-63F1BB25C606}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3F43FCB-1FD7-4C13-911A-6511C17CCB96}
+	EndGlobalSection
+EndGlobal
