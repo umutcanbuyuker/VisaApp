@@ -1,0 +1,115 @@
+.footer {
+    background-color: white;
+    margin-top: 5px;
+    padding: 1px 0;
+    line-height: 1.8rem;
+    box-shadow: 1px 1px 5px grey;
+
+    .container {
+        max-width: 1170px;
+        margin: auto;
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .footer-col {
+                width: 25%;
+                padding: 10px 15px;
+
+                h4 {
+                    font-size: 18px;
+                    color: black;
+                    text-transform: capitalize;
+                    margin-bottom: 25px;
+                    font-weight: 500;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: -10px;
+                        background-color: #e91e63;
+                        height: 2px;
+                        box-sizing: border-box;
+                        width: 20%;
+                    }
+                }
+
+                ul {
+                    list-style: none;
+
+                    a {
+                        font-size: 16px;
+                        margin-bottom: 10px;
+                        text-decoration: none;
+                        text-transform: capitalize;
+                        font-weight: 300;
+                        display: block;
+                        color: #9e9a9a;
+                        transition: all 0.3s ease;
+
+                        &:hover {
+                            color: #9BCF53;
+                            padding-left: 8px;
+                        }
+                    }
+                }
+
+                .social-links a {
+                    display: flex;
+                    height: 40px;
+                    width: 40px;
+                    margin: 0 10px 10px 0;
+                    text-align: center;
+                    line-height: 40px;
+                    border-radius: 50%;
+                    transition: all 0.3s ease;
+
+
+                    .instangram {
+                        background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf)
+                    }
+                }
+            }
+        }
+    }
+
+    .copyright {
+        text-align: center;
+        color: #d6d5d5;
+        line-height: 100px;
+    }
+
+    .highlight {
+        color: lightsalmon;
+    }
+}
+
+/* responsive footer  */
+@media (max-width: 767px) {
+    .footer {
+        .container {
+            .row {
+                .footer-col {
+                    width: 50%;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 574px) {
+    .footer {
+        .container {
+            .row {
+                .footer-col {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
