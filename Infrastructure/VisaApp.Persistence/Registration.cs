@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VisaApp.Application.Interface.Repositories;
+using VisaApp.Application.Interface.UnitOfWorks;
 using VisaApp.Persistence.Context;
 using VisaApp.Persistence.Repositories;
+using VisaApp.Persistence.UnitOfWorks;
 
 namespace VisaApp.Persistence
 {
@@ -21,6 +23,8 @@ namespace VisaApp.Persistence
 
             services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
             services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }
 }

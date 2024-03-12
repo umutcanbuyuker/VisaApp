@@ -16,8 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core\VisaApp.Application\VisaApp.Application.csproj" />
-    <ProjectReference Include="..\VisaApp.Domain\VisaApp.Domain.csproj" />
+    <ProjectReference Include="..\..\Core\VisaApp.Application\VisaApp.Application.csproj" />
   </ItemGroup>
 
 </Project>
