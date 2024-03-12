@@ -23,7 +23,7 @@ namespace VisaApp.Application.Features.Countries.Queries.GetAllCountries
 
             List<GetAllCountriesQueryResponse> response = new ();
 
-            foreach (var country in response)
+            foreach (var country in countries)
                 response.Add(new GetAllCountriesQueryResponse
                 {
                     Name = country.Name,
