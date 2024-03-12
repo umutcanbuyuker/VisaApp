@@ -10,7 +10,7 @@ namespace VisaApp.Domain.Entities
     public class Country : EntityBase
     {
         public int Id { get; set; }
-        public int Name { get; set; }
+        public string Name { get; set; }
         public ICollection<Category> Categories { get; set; }
 
     }
