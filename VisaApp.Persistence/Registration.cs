@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VisaApp.Application.Interface.Repositories;
 using VisaApp.Persistence.Context;
+using VisaApp.Persistence.Repositories;
 
 namespace VisaApp.Persistence
 {
@@ -16,6 +18,9 @@ namespace VisaApp.Persistence
         {
             services.AddDbContext<AppDbContext>(opt =>
             opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
+            services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
         }
     }
 }
