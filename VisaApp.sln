@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisaApp.Application", "Core\VisaApp.Application\VisaApp.Application.csproj", "{932D47B1-121C-47E9-A462-EF944FA7E0CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisaApp.Domain", "VisaApp.Domain\VisaApp.Domain.csproj", "{F93000B5-0128-4245-A670-98BA8336ED75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisaApp.Domain", "Core\VisaApp.Domain\VisaApp.Domain.csproj", "{F93000B5-0128-4245-A670-98BA8336ED75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisaApp.Infrastructure", "VisaApp.Infrastructure\VisaApp.Infrastructure.csproj", "{5838BB11-7410-4883-967A-219672FB0D02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisaApp.Infrastructure", "Infrastructure\VisaApp.Infrastructure\VisaApp.Infrastructure.csproj", "{5838BB11-7410-4883-967A-219672FB0D02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisaApp.Persistence", "VisaApp.Persistence\VisaApp.Persistence.csproj", "{1A3F70BB-1DF8-4B30-8EE8-CD55C783F5A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisaApp.Persistence", "Infrastructure\VisaApp.Persistence\VisaApp.Persistence.csproj", "{1A3F70BB-1DF8-4B30-8EE8-CD55C783F5A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisaApp.Api", "VisaApp.Api\VisaApp.Api.csproj", "{D52EF102-060D-4BE3-B5C0-02B648ED1D95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisaApp.Api", "Presentation\VisaApp.Api\VisaApp.Api.csproj", "{D52EF102-060D-4BE3-B5C0-02B648ED1D95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
