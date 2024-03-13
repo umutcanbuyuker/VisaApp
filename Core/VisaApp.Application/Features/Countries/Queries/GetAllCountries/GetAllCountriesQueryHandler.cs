@@ -20,7 +20,7 @@ namespace VisaApp.Application.Features.Countries.Queries.GetAllCountries
 
         public async Task<IList<GetAllCountriesQueryResponse>> Handle(GetAllCountriesQueryRequest request, CancellationToken cancellationToken)
         {
-            var countries = await unitOfWork.GetReadReadRepository<Country>().GetAllAsync(include: x => x.Include(b => b.Categories));
+            var countries = await unitOfWork.GetReadRepository<Country>().GetAllAsync(include: x => x.Include(b => b.CountryCategories));
 
             var brand = mapper.Map<CategoryDto, Category>(new Category());
 

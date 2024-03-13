@@ -9,10 +9,19 @@ namespace VisaApp.Domain.Entities
 {
     public class Country : EntityBase
     {
-        public int Id { get; set; }
+        public Country()
+        {
+            
+        }
+
+        public Country(string name, string flag)
+        {
+            Name = name;
+            Flag = flag;
+        }
         public string Name { get; set; }
         public string Flag { get; set; }
-        public ICollection<Category> Categories { get; set; }
+        public ICollection<CountryCategory> CountryCategories { get; set; }
 
     }
 }
