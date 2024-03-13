@@ -17,6 +17,7 @@ namespace VisaApp.Persistence.Configurations
             {
                 Id = 1,
                 Name = "X",
+                Flag = "test",
                 IsDeleted = false,
                 CreatedDate = DateTime.Now,
             };
@@ -25,6 +26,7 @@ namespace VisaApp.Persistence.Configurations
             {
                 Id = 2,
                 Name = "Y",
+                Flag = "testy",
                 IsDeleted = false,
                 CreatedDate = DateTime.Now,
             };
@@ -33,6 +35,7 @@ namespace VisaApp.Persistence.Configurations
             {
                 Id = 3,
                 Name = "Z",
+                Flag = "Testz",
                 IsDeleted = true,
                 CreatedDate = DateTime.Now,
             };
