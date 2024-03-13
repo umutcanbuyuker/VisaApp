@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisaApp.Persistence", "Infr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisaApp.Api", "Presentation\VisaApp.Api\VisaApp.Api.csproj", "{D52EF102-060D-4BE3-B5C0-02B648ED1D95}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisaApp.Mapper", "VisaApp.Mapper\VisaApp.Mapper.csproj", "{E123FCA2-5B52-4C02-BA83-E7166C9FE902}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{D52EF102-060D-4BE3-B5C0-02B648ED1D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D52EF102-060D-4BE3-B5C0-02B648ED1D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D52EF102-060D-4BE3-B5C0-02B648ED1D95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E123FCA2-5B52-4C02-BA83-E7166C9FE902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E123FCA2-5B52-4C02-BA83-E7166C9FE902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E123FCA2-5B52-4C02-BA83-E7166C9FE902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E123FCA2-5B52-4C02-BA83-E7166C9FE902}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{5838BB11-7410-4883-967A-219672FB0D02} = {B8652060-1A03-4E89-AC38-E628FD74CA4E}
 		{1A3F70BB-1DF8-4B30-8EE8-CD55C783F5A3} = {B8652060-1A03-4E89-AC38-E628FD74CA4E}
 		{D52EF102-060D-4BE3-B5C0-02B648ED1D95} = {E769A99B-F1FF-4EF7-893F-63F1BB25C606}
+		{E123FCA2-5B52-4C02-BA83-E7166C9FE902} = {FFD4163B-A3EE-4753-8BD0-38D98ECD200A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C3F43FCB-1FD7-4C13-911A-6511C17CCB96}
