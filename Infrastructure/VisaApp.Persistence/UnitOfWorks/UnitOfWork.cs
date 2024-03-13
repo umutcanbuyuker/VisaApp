@@ -23,7 +23,7 @@ namespace VisaApp.Persistence.UnitOfWorks
 
         public int Save() => dbContext.SaveChanges();
 
-        IReadRepository<T> IUnitOfWork.GetReadReadRepository<T>() => new ReadRepository<T>(dbContext);
+        IReadRepository<T> IUnitOfWork.GetReadRepository<T>() => new ReadRepository<T>(dbContext);
 
         IWriteRepository<T> IUnitOfWork.GetWriteRepository<T>() => new WriteRepository<T>(dbContext);
     }
