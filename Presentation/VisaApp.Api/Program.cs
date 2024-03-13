@@ -1,6 +1,7 @@
 using VisaApp.Persistence;
 using VisaApp.Application;
 using VisaApp.Mapper;
+using VisaApp.Infrastructure;
 
 namespace VisaApp.Api
 {
@@ -25,6 +26,7 @@ namespace VisaApp.Api
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional:true);
 
             builder.Services.AddPersistence(builder.Configuration);
+            builder.Services.AddInfrastructure(builder.Configuration);
             builder.Services.AddApplication();
             builder.Services.AddCustomMapper();
 
