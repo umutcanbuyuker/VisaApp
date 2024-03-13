@@ -2,6 +2,7 @@ using VisaApp.Persistence;
 using VisaApp.Application;
 using VisaApp.Mapper;
 using VisaApp.Infrastructure;
+using Microsoft.OpenApi.Models;
 
 namespace VisaApp.Api
 {
@@ -29,6 +30,34 @@ namespace VisaApp.Api
             builder.Services.AddInfrastructure(builder.Configuration);
             builder.Services.AddApplication();
             builder.Services.AddCustomMapper();
+
+            builder.Services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "VisaApp API", Version = "v1", Description = "VisaApp API swagger client"});
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "'Bearer' yazýp boþluk býraktýktan sonra Token'ý Girebilirsiniz \r\n\r\n Örneðin \"Bearer test123\""
+                });
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        Array.Empty<string>()
+                    }
+                });
+            });
 
             var app = builder.Build();
 

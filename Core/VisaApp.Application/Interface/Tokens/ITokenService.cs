@@ -15,6 +15,6 @@ namespace VisaApp.Application.Interface.Tokens
 
         string GenerateRefreshToken();
 
-        ClaimsPrincipal? GetPrincipalFromExipredToken();
+        ClaimsPrincipal? GetPrincipalFromExipredToken(string? token);
     }
 }
