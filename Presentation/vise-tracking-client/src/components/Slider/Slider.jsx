@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid } from '@mui/material';
+import { Container, Grid, TextField, Button } from '@mui/material';
 import SliderImage from "../../../assets/slider.png"
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import "./Slider.scss"
@@ -16,6 +16,27 @@ const Slider = () => {
                             <div className="text-container">
                                 <h2 className="overlay-title">En Erken Vize Tarihini Bul</h2>
                                 <p className='overlay-text'>Arayın ve anında bildirim alın!</p>
+                                <div className="search-bar" style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "10px", width: "100%", }}>
+                                    <TextField
+                                        style={{
+                                            backgroundColor: "white",
+                                            borderRadius: "20px",
+                                            boxShadow: "1px 1px 10px grey "
+
+
+                                        }}
+                                        variant="outlined"
+                                        placeholder="Ülke"
+                                        fullWidth
+                                        InputProps={{
+                                            endAdornment: (
+                                                <Button style={{ backgroundColor: "#9BCF53", borderRadius: "10px" }} variant="contained" endIcon={<ArrowForwardIcon />}>
+                                                    Ara
+                                                </Button>
+                                            )
+                                        }}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </Grid>
@@ -26,8 +47,3 @@ const Slider = () => {
 }
 
 export default Slider;
-
-
-
-
-

@@ -1,13 +1,22 @@
-import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
 import React from 'react';
+import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
+
 
 const Countries = () => {
+
+    const isLargeScreen = useMediaQuery('(min-width: 1280px)'); // lg ekran boyutunu kontrol et
+
+
     return (
-        <Container maxWidth="lg" style={{ marginTop: "50px" }}>
-            <Grid item xs={12}>
-                <Typography variant="h6" gutterBottom align="left" style={{ fontSize: "15px", fontWeight: "bold", marginTop: "10px", marginBottom: "1px" }}>Ülkeler</Typography>
+        <Container maxWidth="lg" style={{ marginTop: "50px" }} >
+            <Grid container justifyContent={isLargeScreen ? "flex-start" : "center"}>
+                <Grid item xs={12}>
+                    <Typography variant="h6" gutterBottom align={isLargeScreen ? "left" : "center"} style={{ fontSize: "15px", fontWeight: "bold", marginTop: "10px", marginBottom: "10px" }}>Ülkeler</Typography>
+                </Grid>
             </Grid>
-            <Grid container spacing={1} marginTop="10px" >
+
+            <Grid container spacing={1} >
                 <Grid item xs={12} sm={3} ms={6}  >
                     <Card sx={{ maxWidth: 345 }}>
                         <CardActionArea>

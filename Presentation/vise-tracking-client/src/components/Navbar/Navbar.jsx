@@ -39,7 +39,7 @@ function Navbar() {
                     </Link>
                 </li>
                 <li className="nav__item">
-                    <Link to="/login" className="link-register">
+                    <Link to="/register" className="link-register">
                         Kayıt Ol
                     </Link>
                 </li>

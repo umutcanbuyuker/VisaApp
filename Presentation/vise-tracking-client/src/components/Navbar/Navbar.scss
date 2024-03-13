@@ -93,6 +93,9 @@ a {
     transition: 0.3s ease-in;
 }
 
+
+
+
 // Responsive styles
 @media screen and (max-width: 768px) {
     .nav__toggler {
@@ -101,7 +104,7 @@ a {
     }
 
     .nav__menu {
-        z-index: 1;
+        z-index: 4;
         display: flex;
         align-items: center;
         position: fixed;
