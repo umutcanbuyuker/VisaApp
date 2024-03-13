@@ -1,5 +1,6 @@
 using VisaApp.Persistence;
 using VisaApp.Application;
+using VisaApp.Mapper;
 
 namespace VisaApp.Api
 {
@@ -25,6 +26,7 @@ namespace VisaApp.Api
 
             builder.Services.AddPersistence(builder.Configuration);
             builder.Services.AddApplication();
+            builder.Services.AddCustomMapper();
 
             var app = builder.Build();
 
