@@ -57,7 +57,7 @@ namespace VisaApp.Infrastructure.Tokens
             return Convert.ToBase64String(randomNumber);
         }
 
-        public ClaimsPrincipal? GetPrincipalFromExipredToken(string? token)
+        public ClaimsPrincipal? GetPrincipalFromExpiredToken(string? token)
         {
             TokenValidationParameters tokenValidationParameters = new()
             {
