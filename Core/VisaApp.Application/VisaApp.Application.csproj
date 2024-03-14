@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Auth\Queries\" />
+    <Folder Include="Features\Auth\Register\Queries\" />
   </ItemGroup>
 
 </Project>

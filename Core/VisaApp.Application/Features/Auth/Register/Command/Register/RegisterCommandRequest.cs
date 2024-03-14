@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace VisaApp.Application.Features.Auth.Command.Register
+namespace VisaApp.Application.Features.Auth.Register.Command.Register
 {
     public class RegisterCommandRequest : IRequest
     {

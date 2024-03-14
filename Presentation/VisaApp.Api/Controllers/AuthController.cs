@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using VisaApp.Application.Features.Auth.Command.Register;
+using VisaApp.Application.Features.Auth.Register.Command.Register;
 
 namespace VisaApp.Api.Controllers
 {
