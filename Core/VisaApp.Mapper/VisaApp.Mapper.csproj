@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core\VisaApp.Application\VisaApp.Application.csproj" />
+    <ProjectReference Include="..\VisaApp.Application\VisaApp.Application.csproj" />
   </ItemGroup>
 
 </Project>
