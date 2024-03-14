@@ -17,9 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\VisaApp.Mapper\VisaApp.Mapper.csproj" />
     <ProjectReference Include="..\..\Infrastructure\VisaApp.Infrastructure\VisaApp.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\VisaApp.Persistence\VisaApp.Persistence.csproj" />
-    <ProjectReference Include="..\..\VisaApp.Mapper\VisaApp.Mapper.csproj" />
   </ItemGroup>
 
 </Project>

@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisaApp.Persistence", "Infr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisaApp.Api", "Presentation\VisaApp.Api\VisaApp.Api.csproj", "{D52EF102-060D-4BE3-B5C0-02B648ED1D95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisaApp.Mapper", "VisaApp.Mapper\VisaApp.Mapper.csproj", "{E123FCA2-5B52-4C02-BA83-E7166C9FE902}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisaApp.Mapper", "Core\VisaApp.Mapper\VisaApp.Mapper.csproj", "{E123FCA2-5B52-4C02-BA83-E7166C9FE902}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
