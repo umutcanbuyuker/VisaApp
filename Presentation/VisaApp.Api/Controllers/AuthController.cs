@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using VisaApp.Application.Features.Auth.Login;
 using VisaApp.Application.Features.Auth.Register.Command.Register;
 
 namespace VisaApp.Api.Controllers
@@ -20,6 +21,13 @@ namespace VisaApp.Api.Controllers
         public async Task<IActionResult> Register(RegisterCommandRequest request)
         {
             await mediator.Send(request);
+            return StatusCode(StatusCodes.Status201Created);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginCommandRequest request)
+        {
+            var response = await mediator.Send(request);
             return StatusCode(StatusCodes.Status201Created);
         }
     }
