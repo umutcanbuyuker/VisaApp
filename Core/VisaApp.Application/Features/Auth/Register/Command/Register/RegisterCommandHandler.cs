@@ -6,14 +6,14 @@ using VisaApp.Application.Interface.AutoMapper;
 using VisaApp.Application.Interface.UnitOfWorks;
 using VisaApp.Domain.Entities;
 
-namespace VisaApp.Application.Features.Auth.Command.Register
+namespace VisaApp.Application.Features.Auth.Register.Command.Register
 {
     public class RegisterCommandHandler : BaseHandler, IRequestHandler<RegisterCommandRequest>
     {
         private readonly UserManager<User> userManager;
         private readonly RoleManager<Role> roleManager;
 
-        public RegisterCommandHandler(UserManager<User> userManager, RoleManager<Role> roleManager, IUnitOfWork unitOfWork, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, mapper,httpContextAccessor)
+        public RegisterCommandHandler(UserManager<User> userManager, RoleManager<Role> roleManager, IUnitOfWork unitOfWork, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, mapper, httpContextAccessor)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
@@ -24,7 +24,7 @@ namespace VisaApp.Application.Features.Auth.Command.Register
             user.UserName = request.Email;
             user.SecurityStamp = Guid.NewGuid().ToString();
 
-            IdentityResult result = await userManager.CreateAsync(user,request.Password);
+            IdentityResult result = await userManager.CreateAsync(user, request.Password);
             if (result.Succeeded)
             {
                 if (!await roleManager.RoleExistsAsync("user")) ;
@@ -38,7 +38,7 @@ namespace VisaApp.Application.Features.Auth.Command.Register
 
                 await userManager.AddToRoleAsync(user, "USER");
             }
- 
+
         }
     }
 }
