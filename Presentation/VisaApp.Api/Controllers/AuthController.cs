@@ -37,5 +37,19 @@ namespace VisaApp.Api.Controllers
             var response = await mediator.Send(request);
             return StatusCode(StatusCodes.Status201Created, response);
         }
+        [HttpPost]
+        public async Task<IActionResult> Revoke(RevokeCommandHandler request)
+        {
+            await mediator.Send(request);
+            return StatusCode(StatusCodes.Status201Created);
+        }
+        [HttpPost]
+        public async Task<IActionResult> RevokeAll()
+        {
+            await mediator.Send(new RevokeAllCommandRequest());
+            return StatusCode(StatusCodes.Status201Created);
+
+            
+        }
     }
 }
