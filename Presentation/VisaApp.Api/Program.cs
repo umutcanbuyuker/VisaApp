@@ -3,6 +3,7 @@ using VisaApp.Application;
 using VisaApp.Mapper;
 using VisaApp.Infrastructure;
 using Microsoft.OpenApi.Models;
+using VisaApp.Application.Exceptions;
 
 namespace VisaApp.Api
 {
@@ -71,6 +72,7 @@ namespace VisaApp.Api
                 app.UseSwaggerUI();
             }
 
+            app.ConfigureExceptionHandlingMiddleware();
             app.UseAuthorization();
 
 
