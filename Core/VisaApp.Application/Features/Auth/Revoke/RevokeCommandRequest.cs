@@ -1,0 +1,14 @@
+﻿using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VisaApp.Application.Features.Auth.Revoke
+{
+    public class RevokeCommandRequest : IRequest
+    {
+        public string Email { get; set; }
+    }
+}
