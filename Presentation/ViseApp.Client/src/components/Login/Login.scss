@@ -1,0 +1,13 @@
+.log-bar{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding-top: 30px;
+    
+    
+        .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+            border-color: transparent !important; // Her durumda çizginin rengini şeffaf yapar
+        }
+}
