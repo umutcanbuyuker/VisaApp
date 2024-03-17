@@ -1,12 +1,12 @@
-import React from 'react';
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
-import Home from './pages/Home/Home';
-import Notification from './pages/Notification/Notification';
-import Contact from './pages/Contact/Contact';
-import Register from './components/Register/Register';
-import Login from './components/Login/Login';
+import React from "react";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home/Home";
+import Notification from "./pages/Notification/Notification";
+import Contact from "./pages/Contact/Contact";
+import Register from "./components/Register/Register";
+import Login from "./components/Login/Login";
 
 const LayoutWithFooter = () => {
   return (
@@ -21,7 +21,6 @@ const LayoutWithFooter = () => {
 const LayoutWithoutFooter = () => {
   return (
     <div className="app">
-      <Navbar />
       <Outlet />
     </div>
   );
@@ -29,44 +28,41 @@ const LayoutWithoutFooter = () => {
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <LayoutWithFooter />,
     children: [
       {
-        path: '/',
-        element: <Home />
+        path: "/",
+        element: <Home />,
       },
       {
-        path: '/bildirim-al',
-        element: <Notification />
+        path: "/bildirim-al",
+        element: <Notification />,
       },
       {
-        path: '/iletisim',
-        element: <Contact
-        />
+        path: "/iletisim",
+        element: <Contact />,
       },
-    ]
+    ],
   },
   {
-    path: '/',
+    path: "/",
     element: <LayoutWithoutFooter />,
     children: [
       {
-        path: '/register',
-        element: <Register />
+        path: "/register",
+        element: <Register />,
       },
       {
-        path: '/login',
-        element: <Login />
-      }
-    ]
-  }
+        path: "/login",
+        element: <Login />,
+      },
+    ],
+  },
 ]);
 
 function App() {
-  return (
-    <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
