@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace VisaApp.Application.Exceptions
 {
-    public class ExceptionsMiddleware : IMiddleware
+    public class ExceptionMiddleware : IMiddleware
     {
         public async Task InvokeAsync(HttpContext httpContext, RequestDelegate next)
         {
@@ -27,7 +27,7 @@ namespace VisaApp.Application.Exceptions
 			List<string> errors = new()
 			{
 				exception.Message,
-				exception.InnerException.ToString(),
+				exception.InnerException?.ToString(),
 			};
 
 			return httpContext.Response.WriteAsync(new ExceptionModel

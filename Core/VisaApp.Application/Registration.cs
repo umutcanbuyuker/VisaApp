@@ -15,7 +15,7 @@ namespace VisaApp.Application
         {
             var assembly = Assembly.GetExecutingAssembly();
 
-            services.AddTransient<ExceptionMiddleware>();
+            services.AddTransient<ExceptionMiddleware>(); 
 
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(assembly));
         }
