@@ -7,7 +7,7 @@ using VisaApp.Application.Bases;
 
 namespace VisaApp.Application.Features.Countries.Exceptions
 {
-    public class CountryNameMustNotBeSame : BaseExceptions
+    public class CountryNameMustNotBeSame : BaseException
     {
         public CountryNameMustNotBeSame() : base("Ülke ismi zaten var") { }
     }

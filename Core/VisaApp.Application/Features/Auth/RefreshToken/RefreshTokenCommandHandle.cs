@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using VisaApp.Application.Bases;
+using VisaApp.Application.Features.Auth.Rules;
 using VisaApp.Application.Interface.AutoMapper;
 using VisaApp.Application.Interface.Tokens;
 using VisaApp.Application.Interface.UnitOfWorks;
@@ -13,10 +14,19 @@ namespace VisaApp.Application.Features.Auth.RefreshToken
 {
     public class RefreshTokenCommandHandle : BaseHandler, IRequestHandler<RefreshTokenCommandRequest, RefreshTokenCommandResponse>
     {
+        private readonly AuthRules authRules;
         private readonly UserManager<User> userManager;
         private readonly ITokenService tokenService;
-        public RefreshTokenCommandHandle(UserManager<User> userManager, ITokenService tokenService, RoleManager<Role> roleManager, IUnitOfWork unitOfWork, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, mapper, httpContextAccessor)
+        public RefreshTokenCommandHandle(
+            AuthRules authRules,
+            UserManager<User> userManager,
+            RoleManager<Role> roleManager,
+            IUnitOfWork unitOfWork,
+            ITokenService tokenService,
+            IMapper mapper,
+            IHttpContextAccessor httpContextAccessor) : base(unitOfWork, mapper, httpContextAccessor)
         {
+            this.authRules = authRules;
             this.userManager = userManager;
             this.tokenService = tokenService;
         }
@@ -29,8 +39,7 @@ namespace VisaApp.Application.Features.Auth.RefreshToken
             User? user = await userManager.FindByEmailAsync(email);
             IList<string> roles = await userManager.GetRolesAsync(user);
 
-            if (user.RefreshTokenExpiryTime <= DateTime.Now)
-                throw new Exception("Oturum süresi sona ermiştir. Lütfen tekrar giriş yapın.");
+            await authRules.RefreshTokenShouldNotBeExpired(user.RefreshTokenExpiryTime);
 
             JwtSecurityToken newAccessToken = await tokenService.CreateToken(user, roles);
             string newRefreshToken = tokenService.GenerateRefreshToken();
