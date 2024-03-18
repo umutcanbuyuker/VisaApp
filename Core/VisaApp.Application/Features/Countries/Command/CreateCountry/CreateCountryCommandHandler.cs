@@ -4,14 +4,14 @@ using VisaApp.Domain.Entities;
 
 namespace VisaApp.Application.Features.Countries.Command.CreateCountry
 {
-    public class CreateCountryCommandHandler : IRequestHandler<CreateCountryCommandRequest>
+    public class CreateCountryCommandHandler : IRequestHandler<CreateCountryCommandRequest, Unit>
     {
         private readonly IUnitOfWork unitOfWork;
         public CreateCountryCommandHandler(IUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
         }
-        public async Task Handle(CreateCountryCommandRequest request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(CreateCountryCommandRequest request, CancellationToken cancellationToken)
         {
             Country country = new(request.Name, request.Flag);
 
@@ -28,6 +28,8 @@ namespace VisaApp.Application.Features.Countries.Command.CreateCountry
                 }
                 await unitOfWork.SaveAsync();
             }
+
+            return Unit.Value;
         }
     }
 }
