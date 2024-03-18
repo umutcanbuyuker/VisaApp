@@ -10,7 +10,7 @@ using VisaApp.Domain.Entities;
 
 namespace VisaApp.Application.Features.Countries.Command.UpdateCountry
 {
-    public class UpdateCountryCommandHandler : IRequestHandler<UpdateCountryCommandRequest>
+    public class UpdateCountryCommandHandler : IRequestHandler<UpdateCountryCommandRequest, Unit>
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
@@ -20,7 +20,7 @@ namespace VisaApp.Application.Features.Countries.Command.UpdateCountry
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
         }
-        public async Task Handle(UpdateCountryCommandRequest request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(UpdateCountryCommandRequest request, CancellationToken cancellationToken)
         {
             var country = await unitOfWork.GetReadRepository<Country>().GetAsync(x => x.Id ==  request.Id && !x.IsDeleted);
             
@@ -38,6 +38,8 @@ namespace VisaApp.Application.Features.Countries.Command.UpdateCountry
 
             await unitOfWork.GetWriteRepository<Country>().UpdateAsync(map);
             await unitOfWork.SaveAsync();
+
+            return Unit.Value;
         }
     }
 }

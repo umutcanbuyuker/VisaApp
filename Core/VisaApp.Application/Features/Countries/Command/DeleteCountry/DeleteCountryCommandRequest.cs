@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VisaApp.Application.Features.Countries.Command.DeleteCountry
 {
-    public class DeleteCountryCommandRequest : IRequest
+    public class DeleteCountryCommandRequest : IRequest<Unit>
     {
         public int Id { get; set; }
     }

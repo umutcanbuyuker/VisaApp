@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VisaApp.Application.Features.Countries.Command.UpdateCountry
 {
-    public class UpdateCountryCommandRequest : IRequest
+    public class UpdateCountryCommandRequest : IRequest<Unit>
     {
         public int Id { get; set; }
         public string Name { get; set; }
