@@ -11,7 +11,7 @@ namespace VisaApp.Application.Exceptions
     {
         public static void ConfigureExceptionHandlingMiddleware(this IApplicationBuilder app)
         {
-            app.UseMiddleware<ExceptionsMiddleware>();
+            app.UseMiddleware<ExceptionMiddleware>();
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace VisaApp.Application.Features.Auth.Register.Command.Register
 {
-    public class RegisterCommandRequest : IRequest
+    public class RegisterCommandRequest : IRequest<Unit>
     {
         public string FullName { get; set; }
         public string Email { get; set; }

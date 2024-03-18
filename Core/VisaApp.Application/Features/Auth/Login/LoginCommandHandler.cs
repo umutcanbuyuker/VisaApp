@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VisaApp.Application.Bases;
+using VisaApp.Application.Features.Auth.Rules;
 using VisaApp.Application.Interface.AutoMapper;
 using VisaApp.Application.Interface.Tokens;
 using VisaApp.Application.Interface.UnitOfWorks;
@@ -18,17 +19,21 @@ namespace VisaApp.Application.Features.Auth.Login
 {
     public class LoginCommandHandler : BaseHandler, IRequestHandler<LoginCommandRequest, LoginCommandResponse>
     {
+        private readonly AuthRules authRules;
         public readonly UserManager<User> userManager;
         public readonly RoleManager<Role> roleManager;
         private readonly ITokenService tokenService;
         private readonly IConfiguration configuration;
-        public LoginCommandHandler(UserManager<User> userManager,
+        public LoginCommandHandler(
+            AuthRules authRules,
+            UserManager<User> userManager,
             IUnitOfWork unitOfWork,
             IMapper mapper, 
             IHttpContextAccessor httpContextAccessor,
             ITokenService tokenService,
             IConfiguration configuration) : base(unitOfWork, mapper, httpContextAccessor)
         {
+            this.authRules = authRules;
             this.userManager = userManager;
             this.tokenService = tokenService;
             this.configuration = configuration;
@@ -38,6 +43,8 @@ namespace VisaApp.Application.Features.Auth.Login
         {
             User user = await userManager.FindByEmailAsync(request.Email);
             bool checkPassword = await userManager.CheckPasswordAsync(user, request.Password);
+
+            await authRules.EmailOrPasswordShouldNotBeInvalid(user, checkPassword);
 
             IList<string> roles = await userManager.GetRolesAsync(user);
 
