@@ -4,7 +4,7 @@ using VisaApp.Domain.Entities;
 
 namespace VisaApp.Application.Features.Countries.Command.DeleteCountry
 {
-    public class DeleteCountryCommandHandler : IRequestHandler<DeleteCountryCommandRequest>
+    public class DeleteCountryCommandHandler : IRequestHandler<DeleteCountryCommandRequest,Unit>
     {
         private readonly IUnitOfWork unitOfWork;
 
@@ -12,13 +12,15 @@ namespace VisaApp.Application.Features.Countries.Command.DeleteCountry
         {
             this.unitOfWork = unitOfWork;
         }
-        public async Task Handle(DeleteCountryCommandRequest request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(DeleteCountryCommandRequest request, CancellationToken cancellationToken)
         {
             var country = await unitOfWork.GetReadRepository<Country>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
             country.IsDeleted = true;
 
             await unitOfWork.GetWriteRepository<Country>().UpdateAsync(country);
             await unitOfWork.SaveAsync();
+
+            return Unit.Value;
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VisaApp.Application.Features.Countries.Command.CreateCountry
 {
-    public class CreateCountryCommandRequest : IRequest
+    public class CreateCountryCommandRequest : IRequest<Unit>
     {
         public string Name { get; set; }
         public string Flag { get; set; }
