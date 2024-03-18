@@ -21,6 +21,7 @@ const LayoutWithFooter = () => {
 const LayoutWithoutFooter = () => {
   return (
     <div className="app">
+      <Navbar />
       <Outlet />
     </div>
   );

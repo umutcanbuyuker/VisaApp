@@ -52,16 +52,33 @@ const Login = () => {
             type="text"
             fullWidth
             variant="outlined"
-            placeholder="Kullanıcı Adı"
+            placeholder="E-posta"
             sx={{ borderRadius: "20px", marginBottom: "10px" }}
             InputProps={{
               sx: { borderRadius: "20px" },
             }}
           />
+          <Typography sx={{ marginBottom: "10px", marginLeft: "auto" }}>
+            <Link
+              color="inherit"
+              href="#"
+              sx={{
+                textDecoration: "none",
+                fontSize: "10px",
+                fontWeight: "100",
+                "&:hover": {
+                  color: "grey", // Buradaki renk istediğiniz hover rengini temsil eder.
+                  textDecoration: "underline", // Hover olduğunda altını çizmek için
+                },
+              }}
+            >
+              Kullanıcı adımı unuttum
+            </Link>
+          </Typography>
           <TextField
             fullWidth
             variant="outlined"
-            placeholder="Parola"
+            placeholder="Şifre"
             type={showPassword ? "text" : "password"}
             sx={{
               borderRadius: "10px",
@@ -83,6 +100,23 @@ const Login = () => {
               ),
             }}
           />
+          <Typography sx={{ marginBottom: "20px", marginLeft: "auto" }}>
+            <Link
+              color="inherit"
+              href="#"
+              sx={{
+                textDecoration: "none",
+                fontSize: "10px",
+                fontWeight: "300",
+                "&:hover": {
+                  color: "grey", // Buradaki renk istediğiniz hover rengini temsil eder.
+                  textDecoration: "underline", // Hover olduğunda altını çizmek için
+                },
+              }}
+            >
+              Parolamı Unuttum
+            </Link>
+          </Typography>
 
           <Button
             fullWidth
@@ -94,7 +128,7 @@ const Login = () => {
               backgroundColor: "red",
               padding: 2,
               "&:hover": {
-                backgroundColor: "red", // Hover rengini değiştirebilirsiniz.
+                backgroundColor: "#B31312", // Hover rengini değiştirebilirsiniz.
                 opacity: 1, // Butonun hover olduğunda tamamen görünmesini sağlar.
               },
             }}
@@ -104,18 +138,18 @@ const Login = () => {
           <Typography sx={{ marginTop: "30px" }}>
             <Link
               color="inherit"
-              href="#"
+              href="/register"
               sx={{
                 textDecoration: "none",
                 fontSize: "15px",
                 fontWeight: "300",
                 "&:hover": {
                   color: "grey", // Buradaki renk istediğiniz hover rengini temsil eder.
-                  textDecoration: "none", // Hover olduğunda altını çizmek için
+                  textDecoration: "underline", // Hover olduğunda altını çizmek için
                 },
               }}
             >
-              Parolamı Unuttum?
+              Ücretsiz Hesap Oluşturun
             </Link>
           </Typography>
         </Box>
