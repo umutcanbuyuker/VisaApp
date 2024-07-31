@@ -25,7 +25,7 @@ jobs:
       run: dotnet build ./VisaApp.sln --configuration Release
   
     - name: Publish
-      run: dotnet publish ./VisaApp/Presentation/VisaApp.Api/VisaApp.Api.csproj --configuration Release --no-build --output '${{ secrets.AZURE_PUBLISH_PROFILE_VISAAPP }}'
+      run: dotnet publish ./VisaApp.sln --configuration Release --no-build --output '${{ secrets.AZURE_PUBLISH_PROFILE_VISAAPP }}'
 
     - name: Deployment
       uses: azure/webapps-deploy@v2
